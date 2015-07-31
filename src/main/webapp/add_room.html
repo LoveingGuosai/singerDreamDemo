@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>歌者盟教务平台</title>
+<link href="css/common.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!--弹出层--添加教室-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title wryh" id="myModalLabel">添加教室</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">教室编号</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> 确定添加</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--弹出层--end-->
+
+  <!--顶部导航-->
+  <iframe id="ifs" name="ifs" src="page/topmenu.html" width="100%" height="200px" frameborder="0" scrolling="no"></iframe>
+  <!--顶部导航end-->
+  
+  <!--内容框架-->
+  <div class="container">
+    <!--页头-->
+    <header class="row page-header" style="margin-top:10px;">
+      <div class="col-md-8">
+        <span class="wryh size26" style="margin:8px 50px 0 0;">添加教室</span>
+      </div>
+      <div class="col-md-4" style="text-align:right;">
+        <a href="javascript:void(0)" class="button new-button new-course-button btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> 添加教室</a>
+      </div>
+    </header>
+    <!--页头end-->
+    <!--信息列表-->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>教室编号</th>
+          <th style=" width:135px;">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>南京教室Ⅰ</td>
+          <td>
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-edit"></i> 修改</button>
+            <button type="button" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--信息列表end-->
+
+    <!--分页page-->
+    <!--禁用方式，在li上添加 class="disabled"-->
+    <ul class="pagination">
+        <li class="disabled"><a href="javascript:void(0)">&laquo;</a></li>
+        <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="javascript:void(0)">2</a></li>
+        <li><a href="javascript:void(0)">3</a></li>
+        <li><a href="javascript:void(0)">4</a></li>
+        <li><a href="javascript:void(0)">5</a></li>
+        <li><a href="javascript:void(0)">&raquo;</a></li>
+    </ul>
+    <!--分页page end-->
+  </div>
+  <!--内容框架end-->
+  
+  <!--临时导航--><iframe id="ifs" name="ifs" src="page/menu.html" width="100%" height="60px" frameborder="0" scrolling="no"></iframe>
+ 
+</body>
+</html>

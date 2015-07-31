@@ -1,0 +1,14 @@
+{
+  "name": "epluse-admin",
+  "version": "0.0.0",
+  "authors": [
+    "xiefei <xiefei@gtan.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "riotjs": "~2.0.15",
+    "underscore": "~1.8.3",
+    "rxjs": "~2.5.2"
+  }
+}

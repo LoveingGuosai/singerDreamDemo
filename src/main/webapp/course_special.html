@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>歌者盟教务平台</title>
+<link href="css/common.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!--弹出层--小课排课-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title wryh" id="myModalLabel">设置小课</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">整点/半点</label>
+              <select name="" style="padding:6px 12px;">
+                <option>整点</option>
+                <option>半点</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-2"><label for="exampleInputPassword1">工作时段</label></div>
+                <div class="col-md-10" style="margin-bottom:10px;">
+                  <span class="gray">上午</span>
+                  <select name="" style="padding:6px 12px; width:120px;">
+                    <option>请选择</option>
+                    <option>8:00</option>
+                    <option>9:00</option>
+                    <option>10:00</option>
+                    <option>11:00</option>
+                    <option>12:00</option>
+                  </select>
+                  <span class="gray">~</span>
+                  <select name="" style="padding:6px 12px; width:120px;">
+                    <option>请选择</option>
+                    <option>8:00</option>
+                    <option>9:00</option>
+                    <option>10:00</option>
+                    <option>11:00</option>
+                    <option>12:00</option>
+                  </select>
+                </div>
+                <div class="col-md-10 col-md-offset-2" style="margin-bottom:10px;">
+                  <span class="gray">下午</span>
+                  <select name="" style="padding:6px 12px; width:120px;">
+                    <option>请选择</option>
+                    <option>12:00</option>
+                    <option>13:00</option>
+                    <option>14:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                    <option>17:00</option>
+                    <option>18:00</option>
+                  </select>
+                  <span class="gray">~</span>
+                  <select name="" style="padding:6px 12px; width:120px;">
+                    <option>请选择</option>
+                    <option>12:00</option>
+                    <option>13:00</option>
+                    <option>14:00</option>
+                    <option>15:00</option>
+                    <option>16:00</option>
+                    <option>17:00</option>
+                    <option>18:00</option>
+                  </select>
+                </div>
+                <div class="col-md-10 col-md-offset-2">
+                  <span class="gray">晚上</span>
+                  <select name="" style="padding:6px 12px; width:120px;">
+                    <option>请选择</option>
+                    <option>18:00</option>
+                    <option>19:00</option>
+                    <option>20:00</option>
+                    <option>21:00</option>
+                    <option>22:00</option>
+                    <option>23:00</option>
+                  </select>
+                  <span class="gray">~</span>
+                  <select name="" style="padding:6px 12px; width:120px;">
+                    <option>请选择</option>
+                    <option>18:00</option>
+                    <option>19:00</option>
+                    <option>20:00</option>
+                    <option>21:00</option>
+                    <option>22:00</option>
+                    <option>23:00</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <label for="exampleInputEmail1" style="float:left; margin-left:15px; margin-right:4px;">单节课时</label>
+                <div class="col-xs-2">
+                  <input type="text" class="form-control" placeholder="45" style="float:left;">
+                </div>
+                <span class="gray" style="float:left; padding:5px 0;">分钟</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">休息日设置</label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 一
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="option2"> 二
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3"> 三
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox1" value="option1"> 四
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox2" value="option2"> 五
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3"> 六
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="inlineCheckbox3" value="option3"> 日
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> 确认设置</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--弹出层--end-->
+
+  <!--顶部导航-->
+  <iframe id="ifs" name="ifs" src="page/topmenu.html" width="100%" height="200px" frameborder="0" scrolling="no"></iframe>
+  <!--顶部导航end-->
+  
+  <!--内容框架-->
+  <div class="container">
+    <!--页头-->
+    <header class="row page-header" style="margin-top:10px;">
+      <div class="col-md-8">
+        <span class="wryh size26" style="margin:8px 50px 0 0;">小课排课</span>
+      </div>
+      <div class="col-md-4" style="text-align:right;">
+        <a href="javascript:void(0)" class="button new-button new-course-button btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> 设置小课</a>
+      </div>
+    </header>
+    <!--页头end-->
+    <!--信息列表-->
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <span class="gray" style="float:left; padding:5px 15px;">查看老师</span>
+          <select name="" style="padding:6px 12px; float:left;">
+            <option>杨草飞</option>
+            <option>浩敏</option>
+            <option>刘玉</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <table id="course_special" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th width="120">#</th>
+          <th>星期二<br /><span class="size10">6月21日</span></th>
+          <th>星期三<br /><span class="size10">6月22日</span></th>
+          <th>星期四<br /><span class="size10">6月23日</span></th>
+          <th>星期五<br /><span class="size10">6月24日</span></th>
+          <th>星期六<br /><span class="size10">6月25日</span></th>
+          <th>星期日<br /><span class="size10">6月26日</span></th>
+          <th>星期一<br /><span class="size10">6月27日</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8:00~9:00</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>9:00~10:00</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>10:00~11:00</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>11:00~12:00</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>12:00~13:00</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+        </tr>
+        <tr>
+          <td>13:00~14:00</td>
+          <td class="reserve">已预约 <span>安宝宝</span></td>
+          <td class="bg">大课</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>14:00~15:00</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>15:00~16:00</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>16:00~17:00</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">大课</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>17:00~18:00</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+        </tr>
+        <tr>
+          <td>18:00~19:00</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>19:00~20:00</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>20:00~21:00</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+          <td><a class="btn btn-default btn-xs td_off" href="javascript:;" role="button">上锁</a><a class="btn btn-xs td_on" href="javascript:;" role="button"><i class="glyphicon glyphicon-lock"></i></a></td>
+        </tr>
+        <tr>
+          <td>21:00~22:00</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+        </tr>
+        <tr>
+          <td>22:00~23:00</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg">&nbsp;</td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+          <td class="bg"></td>
+        </tr>
+        <tr>
+          <td>操作</td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+          <td><a class="btn btn-warning" href="javascript:;" role="button">确定排课</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <!--信息列表end-->
+
+    <!--分页page-->
+    <!--禁用方式，在li上添加 class="disabled"-->
+<ul class="pagination">
+        <li class="disabled"><a href="javascript:void(0)">&laquo; 这星期</a></li>
+        <li><a href="javascript:void(0)">下星期 &raquo;</a></li>
+    </ul>
+    <!--分页page end-->
+  </div>
+  <!--内容框架end-->
+  
+  <!--临时导航--><iframe id="ifs" name="ifs" src="page/menu.html" width="100%" height="60px" frameborder="0" scrolling="no"></iframe>
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".td_on").hide();
+  $(".td_off").click(function(){
+    $(this).hide().parent().addClass("bg");
+	$(this).siblings(".td_on").show();
+  });
+  $(".td_on").click(function(){
+    $(this).hide().parent().removeClass("bg");
+	$(this).siblings(".td_off").show();
+  });
+});
+</script>
+</body>
+</html>

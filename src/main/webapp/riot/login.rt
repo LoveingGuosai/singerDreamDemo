@@ -1,0 +1,38 @@
+<login-form>
+    <form onsubmit="{signin}">
+        <div class="form-group">
+            <label for="name">用户名</label>
+            <input type="text" class="form-control input-lg" id="name" placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" class="form-control input-lg" id="password" placeholder="请输入密码">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">登 录</button>
+    </form>
+
+<script>
+    var self = this;
+
+    errorDispaly = function(e){
+      alert("登录失败");
+    };
+
+    redirectToIndex = function(e){
+
+      window.location.replace('/index.html');
+    };
+
+    this.signin = function (e) {
+        $.ajax({
+            url: '/api/backend/login',
+            contentType: 'application/json',
+            data: JSON.stringify({name: $(self.name).val(),password:$(self.password).val()}),
+            error:errorDispaly,
+            success:redirectToIndex,
+            type:'POST'
+        });
+    };
+
+</script>
+</login-form>

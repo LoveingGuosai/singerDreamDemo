@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>歌者盟教务平台</title>
+<link href="css/common.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/riotjs/riot.min.js"></script>
+<script src="js/gen/login.js"></script>
+</head>
+
+<body>  
+  <!--顶部导航-->
+  <header class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!--左边菜单-->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tree-conifer"></span> <span class="wryh">歌者盟教务平台</span></a>
+      </div>
+      <!--左边菜单end-->
+    </div>
+  </header>
+  <!--顶部导航end-->
+  <!--内容框架-->
+  <div class="container">
+    <div class="jumbotron enterImg">
+      <div class="row">
+        <div class="col-md-6" style="text-align:center">
+          <img src="img/layout/logo.jpg" width="360" height="320">
+        </div>
+        <div class="col-md-4">
+          <h3 class="wryh">歌者盟教务平台</h3><br />
+          <login-form></login-form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--内容框架end-->
+  <script>
+    riot.mount('login-form');
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* 登录界面 */
+body{ background:#e2e6ea; margin:0; padding:80px 0;}
+a{text-decoration:none;color:#404040;}
+a:hover{text-decoration:underline;color:#404040;}
+.bug{ clear: both; width:0px; height:0px; font-size:0px; line-height:0px;}
+.cut{ overflow:hidden; white-space:nowrap;} 
+.cutd{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap;} 
+.cuts{ overflow:hidden; text-overflow:ellipsis;} 
+
+/*字体样式*/
+.size10{ font-size:10px;}
+.size14{ font-size:14px;}
+.size16{ font-size:16px;}
+.size18{ font-size:18px;}
+.size20{ font-size:20px; line-height:20px;}
+.size22{ font-size:22px; line-height:22px;}
+.size24{ font-size:24px; line-height:24px;}
+.size26{ font-size:26px; line-height:26px;}
+.weight{ font-weight: bolder;}
+.Constantia{ font-family:Constantia;}
+.wryh{ font-family:Microsoft YaHei;}
+
+/*字体颜色*/
+.gray{ color:#898989;}
+.red{ color:#c33c35;}
+.blue{ color:#679cc5;}
+.yellow{ color:#eb6100;}
+.yellow02{ color:#d9862a;}
+.green{ color:#607d22;}
+
+/*超链接标记*/
+.a1{text-decoration:none; color:#fff;}
+.a1:hover{text-decoration:underline; color:#fff;}
+
+/*边框样式*/
+.bk01{ border:1px solid #d0cbc9;}
+
+/*结构修改*/
+.text_height3{ height:60px;}
+.shopSpace{ display:block; margin-top:20px;}
+.textAlign{ text-align:center;}
+#course_special th,#course_special td{ text-align:center;}
+#course_special td.bg{ background:#e9e9e9;}
+#course_special td.reserve{ background:#337ab7; color:#fff;}
+#course_special td a{ width:100%;}
+.homework{ margin:15px 0; padding:15px 20px 15px 40px; list-style:decimal; border:1px solid #CCC;}
+.homework.marginnone{ margin:0; background:#fff;}
+.homework.marginnone li{ padding-bottom:5px; clear: both;}
+.homework.marginnone li span{ float:right;}
+

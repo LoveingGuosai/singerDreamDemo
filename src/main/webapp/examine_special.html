@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>歌者盟教务平台</title>
+<link href="css/common.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <!--顶部导航-->
+  <iframe id="ifs" name="ifs" src="page/topmenu.html" width="100%" height="200px" frameborder="0" scrolling="no"></iframe>
+  <!--顶部导航end-->
+  
+  <!--内容框架-->
+  <div class="container">
+    <!--页头-->
+    <header class="row page-header" style="margin-top:10px;">
+      <div class="col-md-8">
+        <span class="wryh size26" style="margin:8px 50px 0 0;">查看小课</span>
+      </div>
+    </header>
+    <!--页头end-->
+    <!--信息列表-->
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <span class="gray" style="float:left; padding:5px 15px;">老师</span>
+          <select name="" style="padding:6px 12px; float:left;">
+            <option>杨草飞</option>
+            <option>浩敏</option>
+            <option>刘玉</option>
+          </select>
+          <span class="gray" style="float:left; padding:5px 15px;">小课学生</span>
+          <select name="" style="padding:6px 12px; float:left;">
+            <option>全部</option>
+            <option>学生甲</option>
+            <option>学生乙</option>
+            <option>学生丙</option>
+          </select>
+        </div>
+      </div>
+    </form>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th width="10%">时间</th>
+          <th>学生</th>
+          <th>反馈</th>
+          <th width="76%">作业完成情况</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2015年8月20日 13:00~14:00</td>
+          <td>学生名</td>
+          <td>满意</td>
+          <td>
+            <ul class="homework marginnone">
+              <li>
+                现代流行唱法音准练习 --  第1章  大调音阶音准练习  --  第1讲 大调音阶上行练习  --  进阶练习
+                <span class="yellow02" style="margin-left:20px;">平均分：60</span><span class="blue">1小时30分钟</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>2015年8月20日 13:00~14:00</td>
+          <td>学生名</td>
+          <td>一般</td>
+          <td>
+            <ul class="homework marginnone">
+              <li>
+                现代流行唱法音准练习 --  第1章  大调音阶音准练习  --  第1讲 大调音阶上行练习  --  进阶练习
+                <span class="yellow02" style="margin-left:20px;">平均分：60</span><span class="blue">1小时30分钟</span>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--信息列表end-->
+
+    <!--分页page-->
+    <!--禁用方式，在li上添加 class="disabled"-->
+    <ul class="pagination">
+        <li class="disabled"><a href="javascript:void(0)">&laquo;</a></li>
+        <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="javascript:void(0)">2</a></li>
+        <li><a href="javascript:void(0)">3</a></li>
+        <li><a href="javascript:void(0)">4</a></li>
+        <li><a href="javascript:void(0)">5</a></li>
+        <li><a href="javascript:void(0)">&raquo;</a></li>
+    </ul>
+    <!--分页page end-->
+  </div>
+  <!--内容框架end-->
+  
+  <!--临时导航--><iframe id="ifs" name="ifs" src="page/menu.html" width="100%" height="60px" frameborder="0" scrolling="no"></iframe>
+ 
+</body>
+</html>
